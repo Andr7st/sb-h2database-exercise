@@ -28,8 +28,19 @@ public class Product implements Serializable {
     @Column(unique = true)
     private String reference;
 
+    @Column(nullable=false)
+    private Double price;
+
     @Temporal(TemporalType.DATE) // indica el formato en que se crean las fechas en la tabla
-    private Date created;
+    private Date expiration;
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
 
     public Long getId() {
@@ -56,11 +67,11 @@ public class Product implements Serializable {
         this.reference = reference;
     }
 
-    public Date getCreated() {
-        return created;
+    public Date getExpiration() {
+        return expiration;
     }
 
-    public void setCreated(Date created) {
-        this.created = created;
+    public void setExpiration(Date expiration) {
+        this.expiration = expiration;
     }
 }

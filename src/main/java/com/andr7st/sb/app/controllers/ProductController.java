@@ -6,12 +6,16 @@
 package com.andr7st.sb.app.controllers;
 
 import com.andr7st.sb.app.models.dao.IProductDao;
+import com.andr7st.sb.app.models.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ProductController {
@@ -23,8 +27,11 @@ public class ProductController {
     @RequestMapping(value = "/list", method= RequestMethod.GET)
     public String listClients(Model model) {
 
+        List<Product> productList = productDao.findAll();
+
         model.addAttribute("title", "Lista de productos");
-        model.addAttribute("products", productDao.findAll());
+        model.addAttribute("products", productList);
+
         return "/list";
     }
 

@@ -8,28 +8,24 @@
 <body>
 
   <h1> Products </h1>
+  <p> Proyecto de practica spring boot - base de datos embebida H2 </p>
+  <p> frontend <a href="/h2-console">H2 database </a></p>
 
-  <!--/* 
-  <div th:each="product: ${products}" >
-    <p th:text="${product}"></p>
-  </div>
-
-
-  Andrés Segura
-  */-->
   <table>
     <thead>
-      <th>id</th>
-      <th>nombre</th>
-      <th>referencia</th>
-      <th>fecha</th>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Referencia</th>
+      <th>Precio</th>      
+      <th>Vence</th>
     </thead>
     <tbody>
       <tr th:each="product: ${products}">
         <td th:text="${product.id}"></td>
         <td th:text="${product.name}"></td>
         <td th:text="${product.reference}"></td>
-        <td th:text="${product.created}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.expiration}"></td>
       </tr>
     </tbody>
   </table>
