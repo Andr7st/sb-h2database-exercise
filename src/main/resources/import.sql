@@ -1,0 +1,1 @@
+INSERT INTO products (id, name, reference, created) VALUES (1, 'Producto 4', 'REF004', '2023-07-14');

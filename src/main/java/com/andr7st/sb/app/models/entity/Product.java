@@ -20,7 +20,7 @@ public class Product implements Serializable {
 
     @Id // Indica que es la primary key
     @GeneratedValue(strategy = GenerationType.SEQUENCE) // sequence para postgresql, identity para mysql
-    private Long Id;
+    private Long id;
 
     @Column(length = 128)
     private String name;
@@ -33,11 +33,11 @@ public class Product implements Serializable {
 
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {

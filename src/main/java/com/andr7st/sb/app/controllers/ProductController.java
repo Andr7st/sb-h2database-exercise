@@ -18,13 +18,13 @@ public class ProductController {
 
     @Autowired
     @Qualifier("productDaoJPA") // Apuntar explícitamente al archivo ClientDaoImpl.java para evitar que sea ambiguo | Elegir el bean concreto
-    private IProductDao clientDao;
+    private IProductDao productDao;
 
     @RequestMapping(value = "/list", method= RequestMethod.GET)
     public String listClients(Model model) {
         model.addAttribute("title", "Lista de productos");
-        model.addAttribute("products", clientDao.findAll());
-        return "/lis";
+       // model.addAttribute("products", productDao.findAll());
+        return "/list";
     }
 
 }

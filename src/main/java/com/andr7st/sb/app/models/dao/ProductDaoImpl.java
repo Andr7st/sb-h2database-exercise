@@ -23,6 +23,6 @@ public class ProductDaoImpl implements IProductDao {
     @Override
     public List<Product> findAll() {
         // ignorar warning
-        return entityManager.createQuery("from Client").getResultList();
+        return entityManager.createQuery("from Products").getResultList();
     }
 }
