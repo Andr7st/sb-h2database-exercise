@@ -19,10 +19,11 @@ public class ProductDaoImpl implements IProductDao {
     @PersistenceContext // va a utilizar la base de datos H2
     private EntityManager entityManager;
 
+    @SuppressWarnings("unchecked")
     @Transactional(readOnly = true) // es solo de consulta
     @Override
     public List<Product> findAll() {
-        // ignorar warning
-        return entityManager.createQuery("from Products").getResultList();
+        // ignorar warning:
+        return entityManager.createQuery("from Product").getResultList();
     }
 }

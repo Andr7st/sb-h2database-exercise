@@ -9,11 +9,16 @@
 
   <h1> Products </h1>
 
-
   <!--/* 
-    Andrés Segura
-    <table>
-      <thead>
+  <div th:each="product: ${products}" >
+    <p th:text="${product}"></p>
+  </div>
+
+
+  Andrés Segura
+  */-->
+  <table>
+    <thead>
       <th>id</th>
       <th>nombre</th>
       <th>referencia</th>
@@ -28,6 +33,5 @@
       </tr>
     </tbody>
   </table>
-  */-->
 </body>
 </html>

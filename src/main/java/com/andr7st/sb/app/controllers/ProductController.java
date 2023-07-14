@@ -22,8 +22,9 @@ public class ProductController {
 
     @RequestMapping(value = "/list", method= RequestMethod.GET)
     public String listClients(Model model) {
+
         model.addAttribute("title", "Lista de productos");
-       // model.addAttribute("products", productDao.findAll());
+        model.addAttribute("products", productDao.findAll());
         return "/list";
     }
 
